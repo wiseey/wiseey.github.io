@@ -1,0 +1,38 @@
+    
+    <h1 [@myAnimation]='state' (click)="animateMe()" >Hey my man!</h1>
+    
+    
+    <!-- interpolation - only works with strings! -->
+    <h2>tilda keys hmmm {{interpolation}}</h2>
+    <h3>{{myObject.name}}, {{myObject.age}}</h3>
+
+    <!-- Other property bindings -->
+    <div bind-id="id" class="testcss">property binding</div>
+    <img [src]="imageSrc" bind-width="20" height="30" />
+    <button [disabled]="status == 'true'">My Button</button>
+
+    <!--Event bindings -->
+    <button (click)="myEvent($event)">Event button</button>
+
+    <!-- NG FOR -->
+    <ul>
+      <li *ngFor="let x of myArr">{{x}}</li>
+    </ul>
+
+    <!-- NG IF -->
+    <div *ngIf="myArr == null">Does this If Work??</div>
+
+    <!-- TEMPLATING -->
+    <div *ngIf="1==1; then template1 else template2"></div>
+
+    <ng-template #template1>x is true</ng-template>
+    <ng-template #template2>x is false</ng-template>
+
+    <div [class]="testCss">Testing class bindings</div>
+
+    <div [class.testcss]="propertyTurningClassOn">Testing turning css off with property bool</div>
+   
+    <div [ngClass]="testClasses">Testing multiples classes together</div>
+
+    <!-- Interpolation with service -->
+    <span>{{someProperty}}</span>
